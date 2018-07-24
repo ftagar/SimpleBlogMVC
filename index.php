@@ -7,6 +7,8 @@ require_once 'controllers.php';
 // démarrage de la session
 session_start();
 
+echo 'Hello World';
+
 // initialisation des chemins des différentes parties de l'application
 $uriHome = '/SimpleBlogMVC/index.php';
 $uriBlog = '/SimpleBlogMVC/index.php/blog';
