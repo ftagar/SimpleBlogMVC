@@ -6,7 +6,7 @@
         <?php foreach( $posts as $post ) : ?>
         <li>
             <a href="<?php echo $destUri.'?id='.$post['id']; ?>">
-            <?php echo $post['title']; ?>
+            <?php echo $post['address']; ?>
             </a>
         </li>
         <?php endforeach ?>

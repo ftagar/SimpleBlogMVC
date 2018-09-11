@@ -6,13 +6,13 @@
     
     function blog_action($login,$destUri,$logoutUri,$error)
     {
-        $posts = get_all_posts();
-        require 'view/blog.php';
+        $posts = get_all_alarms();
+        require 'view/address.php';
     }
     
     function post_action($id,$login,$destUri,$logoutUri,$error)
     {
         $post = get_post($id);
-        require 'view/post.php';
+        require 'view/alarms.php';
     }
 ?>

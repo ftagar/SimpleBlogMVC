@@ -10,10 +10,10 @@ session_start();
 echo 'Hello World';
 
 // initialisation des chemins des différentes parties de l'application
-$uriHome = '/SimpleBlogMVC/index.php';
-$uriBlog = '/SimpleBlogMVC/index.php/blog';
-$uriPost = '/SimpleBlogMVC/index.php/post';
-$uriLogout = '/SimpleBlogMVC/index.php/logout';
+$uriHome = '/projetAlarm/index.php';
+$uriBlog = '/projetAlarm/index.php/address';
+$uriPost = '/projetAlarm/index.php/alarms';
+$uriLogout = '/projetAlarm/index.php/logout';
 
 // récupération du nom de la page demandée
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
