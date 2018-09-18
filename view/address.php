@@ -3,10 +3,10 @@
 <?php ob_start(); ?>
     <h1>List of Posts</h1>
     <ul>
-        <?php foreach( $posts as $post ) : ?>
+        <?php foreach( $allAlarms as $alarm ) : ?>
         <li>
-            <a href="<?php echo $destUri.'?id='.$post['id']; ?>">
-            <?php echo $post['address']; ?>
+            <a href="<?php echo $destUri.'?id='.$alarm['id']; ?>">
+            <?php echo $alarm['address']; ?>
             </a>
         </li>
         <?php endforeach ?>

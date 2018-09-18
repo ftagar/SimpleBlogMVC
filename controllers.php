@@ -4,15 +4,15 @@
         require 'view/login.php';
     }
     
-    function blog_action($login,$destUri,$logoutUri,$error)
+    function all_alarms_action($login,$destUri,$logoutUri,$error)
     {
-        $posts = get_all_alarms();
+        $allAlarms = get_all_alarms();
         require 'view/address.php';
     }
     
-    function post_action($id,$login,$destUri,$logoutUri,$error)
+    function alarms_action($id,$login,$destUri,$logoutUri,$error)
     {
-        $post = get_post($id);
+        $alarms = get_Alarms($id);
         require 'view/alarms.php';
     }
 ?>

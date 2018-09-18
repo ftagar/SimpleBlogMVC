@@ -10,10 +10,10 @@ session_start();
 echo 'Hello World';
 
 // initialisation des chemins des différentes parties de l'application
-$uriHome = '/projetAlarm/index.php';
-$uriBlog = '/projetAlarm/index.php/address';
-$uriPost = '/projetAlarm/index.php/alarms';
-$uriLogout = '/projetAlarm/index.php/logout';
+$uriHome = '/projetAlarmC/index.php';
+$uriAdress = '/projetAlarmC/index.php/address';
+$uriAlarms = '/projetAlarmC/index.php/alarms';
+$uriLogout = '/projetAlarmC/index.php/logout';
 
 // récupération du nom de la page demandée
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -40,15 +40,15 @@ if (!isset($_SESSION['login'])) {
 
 // route la requête en interne
 if ($uri == $uriHome) {
-    login_action($login, $uriBlog, $uriLogout, $error);
-} elseif ($uri == $uriBlog && isset($_POST['login']) && isset($_POST['password'])) {
-    blog_action($login, $uriPost, $uriLogout, $error);
-} elseif ($uri == $uriPost && isset($_GET['id'])) {
-    post_action($_GET['id'], $login, '', $uriLogout, $error);
+    login_action($login, $uriAddress, $uriLogout, $error);
+} elseif ($uri == $uriAdress && isset($_POST['login']) && isset($_POST['password'])) {
+    all_alarms_action($login, $uriAlarms, $uriLogout, $error);
+} elseif ($uri == $uriAlarms && isset($_GET['id'])) {
+    alarms_action($_GET['id'], $login, '', $uriLogout, $error);
 } elseif ($uri == $uriLogout) {
     // fermeture de la session et affichage de la page de connexion
     session_destroy();
-    login_action('', $uriBlog, $uriLogout, '');
+    login_action('', $uriAdress, $uriLogout, '');
 } else {
     header('Status: 404 Not Found');
     echo '<html><body><h1>My Page Not Found</h1></body></html>';

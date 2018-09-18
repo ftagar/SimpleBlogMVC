@@ -2,10 +2,12 @@
 
 <?php ob_start(); ?>
 
-    <h1><?php echo $post['address']; ?></h1>
+    <h1><?php echo $alarms['address']; ?></h1>
 
-    <div class="date"> <?php echo $post['location']; ?> </div>
-    <div class="body"> <?php echo $post['height']; ?> </div>
+    <div class="date"> <?php echo 'Batiment:'.$alarms['bat']; ?> </div>
+    <div class="date"> <?php echo 'Salle:'.$alarms['salle']; ?> </div>
+    <div class="date"> <?php echo 'location:'.$alarms['location']; ?> </div>
+    <div class="body"> <?php echo 'height:'.$alarms['height'].'m'; ?> </div>
 
 <?php $content = ob_get_clean(); ?>
 

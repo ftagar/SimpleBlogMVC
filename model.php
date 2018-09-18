@@ -33,7 +33,7 @@
     {
         $link = open_database_connection();
         
-        $resultall = mysqli_query($link,'SELECT id, height, address,location FROM Alarms');
+        $resultall = mysqli_query($link,'SELECT id, height, address, bat, salle, location FROM Alarms,Address WHERE  Alarms.id_address = Address.id_address');
         $posts = array();
         while ($row = mysqli_fetch_assoc($resultall)) {
             $posts[] = $row;
@@ -45,12 +45,12 @@
         return $posts;
     }
     
-    function get_post( $id )
+    function get_Alarms($id )
     {
         $link = open_database_connection();
         
         $id = intval($id);
-        $result = mysqli_query($link, 'SELECT * FROM Alarms WHERE id='.$id );
+        $result = mysqli_query($link, 'SELECT * FROM Alarms Al, Address Ad WHERE Al.id_address=Ad.id_address and id='.$id );
         $post = mysqli_fetch_assoc($result);
         
         mysqli_free_result( $result);
